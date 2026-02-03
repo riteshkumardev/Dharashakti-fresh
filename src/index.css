@@ -1,0 +1,92 @@
+/* --- Global Reset & Base --- */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f7f6; /* Light professional background */
+  
+  /* FIXED: overflow-x ko yahan se hata diya hai taaki print blank na aaye */
+}
+
+/* Mobile par side scrolling rokne ke liye sirf screen view par apply karein */
+@media screen {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* --- Container Responsiveness --- */
+.home-container, .table-container-wide, .sales-container {
+  padding: 10px; 
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* --- Dashboard & Stock Summary Cards Fix --- */
+.features, .stock-summary-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* --- Table Responsiveness --- */
+.table-responsive-wrapper {
+  width: 100%;
+  overflow-x: auto; 
+  -webkit-overflow-scrolling: touch;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.modern-sales-table {
+  min-width: 800px; 
+  width: 100%;
+}
+
+/* --- Mobile Specific Queries (768px) --- */
+@media (max-width: 768px) {
+  .table-header-row, .professional-header, .hero-section {
+    flex-direction: column !important;
+    text-align: center;
+    padding: 15px !important;
+  }
+
+  .modern-search, .search-wrapper {
+    width: 100% !important;
+    margin-top: 10px;
+  }
+
+  .card-value {
+    font-size: 1.5rem !important;
+  }
+
+  .table-title {
+    font-size: 1.2rem !important;
+  }
+
+  .btn-group-pro, .action-btns-cell {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+/* --- Form Grid Fix --- */
+.sales-form-grid {
+  display: grid;
+  grid-template-columns: 1fr; 
+  gap: 15px;
+}
+
+@media (min-width: 992px) {
+  .sales-form-grid {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
